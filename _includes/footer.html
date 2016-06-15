@@ -2,27 +2,31 @@
 
   <div class="wrapper">
 
-    <ul class="footer-links">
+    <ul class="site-footer__links">
       {% if site.github_username %}
-      <li>
+      <li class="site-footer__link-item">
         {% include icon-github.html username=site.github_username %}
       </li>
       {% endif %}
 
       {% if site.twitter_username %}
-      <li>
+      <li class="site-footer__link-item">
         {% include icon-twitter.html username=site.twitter_username %}
       </li>
       {% endif %}
 
-      <li>
+      <li class="site-footer__link-item">
         <a href="mailto:{{ site.email }}">Email</a>
       </li>
 
-      <li>
+      <li class="site-footer__link-item">
         <a href="{{ "/feed.xml" | prepend: site.baseurl }}">RSS feed</a>
       </li>
     </ul>
+
+    <p class="site-footer__copyright">
+      {{ site.copyright }}
+    </p>
 
   </div>
 

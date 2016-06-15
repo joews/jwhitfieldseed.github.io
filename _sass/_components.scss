@@ -4,6 +4,9 @@
 .site-header {
   min-height: $header-height;
   margin-bottom: 40px;
+  background-color: $header-background;
+  border-bottom: solid 1px $header-border-color;
+  color: $header-color;
 }
 
 .site-title {
@@ -15,7 +18,7 @@
   float: left;
 
   &:visited {
-    color: $grey-color-dark;
+    color: inherit;
   }
 
   &:hover {
@@ -26,17 +29,24 @@
 .site-nav {
   float: right;
   line-height: 56px;
+}
 
-  .page-link {
-    color: $text-color;
-    line-height: $base-line-height;
+.site-nav__link {
+  line-height: $base-line-height;
 
-    // Gaps between nav items, but not on the last one
-    &:not(:last-child) {
-      margin-right: 20px;
-    }
+  // Gaps between nav items, but not on the last one
+  &:not(:last-child) {
+    margin-right: 20px;
+  }
 
-    font-size: 1.2em;
+  font-size: 1.2em;
+
+  &:visited {
+    color: inherit;
+  }
+
+  &:hover {
+    text-decoration: none;
   }
 }
 
@@ -46,8 +56,17 @@
 .page-heading {
   border-bottom: 1px solid $grey-color-light;
   padding-bottom: 15px;
-  margin-bottom: 65px;
   font-weight: 300;
+  margin-bottom: 50px;
+
+  @include media-query($on-laptop) {
+    margin-bottom: 25px;
+  }
+
+  @include media-query($on-palm-sm) {
+    // fit "Joe Whitfield-Seed's blog" on one line
+    font-size: 1.7em;
+  }
 }
 
 //
@@ -55,6 +74,15 @@
 //
 .post-list {
   list-style: none;
+  margin-left: 30px;
+
+  @include media-query($on-laptop) {
+    margin-left: 20px;
+  }
+
+   @include media-query($on-laptop) {
+    margin-left: 0;
+  }
 }
 
 .post-summary {
@@ -74,30 +102,47 @@
   margin-top: 60px;
 }
 
-.footer-links {
+.site-footer__links {
   border-top: 1px solid $grey-color-light;
   margin: 0;
   padding-top: 15px;
   list-style: none;
   text-align: center;
-
-  @include media-query($on-palm) {
-    text-align: left;
-  }
 }
 
-.footer-links li {
+.site-footer__link-item {
   display: inline-block;
 
   &:not(:last-child) {
     margin-right: 30px;
   }
 
-  @include media-query($on-palm) {
+  @include media-query($on-palm-sm) {
+    margin: 0 5px 0 0 !important;
     display: block;
-    margin-left: 30px;
     font-size: 1.2em;
   }
 }
 
-.footer-links li a { }
+.site-footer__copyright {
+  margin: 15px;
+  color: $text-color-lighter;
+  font-size: 0.8em;
+  text-align: center;
+}
+
+//
+// Objects
+//
+.icon {
+  > svg {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+
+    path {
+      fill: $grey-color;
+    }
+  }
+}
