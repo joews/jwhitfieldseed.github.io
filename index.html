@@ -4,7 +4,14 @@ layout: default
 
 <div class="home">
 
-  <h1 class="page-heading">Joe Whitfield-Seed's blog</h1>
+  <div class="home__header">
+    <img class="home__avatar" src="/images/avatar.png" alt="Joe Whitfield-Seed's face">
+    <div class="home__header-text">
+      <h1 class="home__title">Joe Whitfield-Seed</h1>
+      <p class="home__intro">
+        Software engineer <small>at</small> <a href="https://ripjar.com" title="Ripjar - Joe Whitfield-Seed's employer">Ripjar</a>
+    </div>
+  </div>
 
   <ul class="post-list">
     {% for post in site.posts %}
@@ -13,6 +20,11 @@ layout: default
           <a class="post-summary__title" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
         </h2>
         <span class="post-summary__date">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <div class="post-summary__schnipple">
+          {{ post.excerpt }}
+        </div>
+
+        <a class="post-summary__title" href="{{ post.url | prepend: site.baseurl }}">Read more&hellip;</a>
       </li>
     {% endfor %}
   </ul>

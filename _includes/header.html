@@ -1,17 +1,15 @@
 <header class="site-header">
+  <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
 
-  <div class="wrapper">
-
-    <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
-
-    <nav class="site-nav">
+  <nav class="site-nav">
+    {% comment %}
       {% for my_page in site.pages %}
         {% if my_page.title %}
         <a class="site-nav__link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
         {% endif %}
       {% endfor %}
-    </nav>
-
-  </div>
-
+    {% endcomment %}
+    <a class="site-nav__link" href="https://github.com/jwhitfieldseed">Github</a>
+    <a class="site-nav__link" href="https://twitter.com/jwhitfieldseed">Twitter</a>
+  </nav>
 </header>

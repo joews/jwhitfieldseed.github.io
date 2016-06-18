@@ -1,33 +1,29 @@
 <footer class="site-footer">
 
-  <div class="wrapper">
+  <ul class="site-footer__links">
+    {% if site.github_username %}
+    <li class="site-footer__link-item">
+      {% include icon-github.html username=site.github_username %}
+    </li>
+    {% endif %}
 
-    <ul class="site-footer__links">
-      {% if site.github_username %}
-      <li class="site-footer__link-item">
-        {% include icon-github.html username=site.github_username %}
-      </li>
-      {% endif %}
+    {% if site.twitter_username %}
+    <li class="site-footer__link-item">
+      {% include icon-twitter.html username=site.twitter_username %}
+    </li>
+    {% endif %}
 
-      {% if site.twitter_username %}
-      <li class="site-footer__link-item">
-        {% include icon-twitter.html username=site.twitter_username %}
-      </li>
-      {% endif %}
+    <li class="site-footer__link-item">
+      <a href="mailto:{{ site.email }}">Email</a>
+    </li>
 
-      <li class="site-footer__link-item">
-        <a href="mailto:{{ site.email }}">Email</a>
-      </li>
+    <li class="site-footer__link-item">
+      <a href="{{ "/feed.xml" | prepend: site.baseurl }}">RSS feed</a>
+    </li>
+  </ul>
 
-      <li class="site-footer__link-item">
-        <a href="{{ "/feed.xml" | prepend: site.baseurl }}">RSS feed</a>
-      </li>
-    </ul>
-
-    <p class="site-footer__copyright">
-      {{ site.copyright }}
-    </p>
-
-  </div>
+  <p class="site-footer__copyright">
+    {{ site.copyright }}
+  </p>
 
 </footer>
