@@ -16,6 +16,8 @@ twitter_username: jwhitfieldseed
 github_username:  jwhitfieldseed
 copyright: © 2016 Joe Whitfield-Seed
 
+permalink: /blog/:year/:month/:day/:title
+
 # Build settings
 markdown: kramdown
 highlighter: rouge
